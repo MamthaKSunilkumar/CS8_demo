@@ -9,7 +9,7 @@ pipeline {
         stage('Clone Code') {
             steps {
                 git branch: 'main',
-                    url: 'https://github.com/username/react-jenkins-demo.git'
+                    url: 'https://github.com/MamthaKSunilkumar/CS8_demo.git'
             }
         }
 
