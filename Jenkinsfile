@@ -2,8 +2,8 @@ pipeline {
     agent any
 
     environment {
-        IMAGE_NAME = "react-vite-app"
-        CONTAINER_NAME = "react-vite-container"
+        IMAGE_NAME = "<none>"
+        CONTAINER_NAME = "gallant_noyce"
     }
 
     stages {
@@ -17,13 +17,13 @@ pipeline {
 
         stage('Build Docker Image') {
             steps {
-                sh 'docker build -t $IMAGE_NAME .'
+                bat 'docker build -t $IMAGE_NAME .'
             }
         }
 
         stage('Stop Old Container') {
             steps {
-                sh '''
+                bat '''
                 docker stop $CONTAINER_NAME || true
                 docker rm $CONTAINER_NAME || true
                 '''
@@ -32,7 +32,7 @@ pipeline {
 
         stage('Run Docker Container') {
             steps {
-                sh '''
+                bat '''
                 docker run -d \
                 -p 5173:5173 \
                 --name $CONTAINER_NAME \
