@@ -2,8 +2,8 @@ pipeline {
     agent any
 
     environment {
-        IMAGE_NAME = "<none>"
-        CONTAINER_NAME = "gallant_noyce"
+        IMAGE_NAME = "react-vite-app"
+        CONTAINER_NAME = "react-vite-container"
     }
 
     stages {
