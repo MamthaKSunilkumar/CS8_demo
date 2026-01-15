@@ -55,8 +55,8 @@ pipeline {
     agent any
 
     environment {
-        IMAGE_NAME = "react-vite-app"
-        CONTAINER_NAME = "react-vite-container"
+        IMAGE_NAME = "react-app"
+        CONTAINER_NAME = "blissful_pascal"
     }
 
     stages {
