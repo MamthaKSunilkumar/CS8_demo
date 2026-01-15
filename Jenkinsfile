@@ -17,17 +17,12 @@ pipeline {
 
         stage('Build Docker Image') {
             steps {
-<<<<<<< HEAD
                 sh 'docker build -t $IMAGE_NAME .'
-=======
-                bat 'npm install'
->>>>>>> 1ec3edabd7263e45824e6b7cddda6af29724ddaf
             }
         }
 
         stage('Stop Old Container') {
             steps {
-<<<<<<< HEAD
                 sh '''
                 docker stop $CONTAINER_NAME || true
                 docker rm $CONTAINER_NAME || true
@@ -43,9 +38,6 @@ pipeline {
                 --name $CONTAINER_NAME \
                 $IMAGE_NAME
                 '''
-=======
-                bat 'npm run build'
->>>>>>> 1ec3edabd7263e45824e6b7cddda6af29724ddaf
             }
         }
     }
